@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
+.navbar {
+  width: 100%;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.navbar.fake{
+  position: relative;
+  background-color: transparent;
+  opacity: 0;
+  display: none;
+}
+
+
+.logo {
+  font-family: 'Rochester', cursive;
+  font-size: 1.5rem;
+  width: max-content;
+  gap: 10px;
+  align-items: center;
+  color: #0d2137;
+  display: flex;
+}
+
+
+
+.nav_links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_links li {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  color: #0d2137;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav_links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 1px;
+  background-color: #0d2137;
+  transition: 0.3s;
+}
+
+.nav_links li:hover::after {
+  width: 100%;
+}
+
+.nav_links .selected {
+  color: #c08c09;
+}
+
+.nav_links .selected::after {
+  width: 100%;
+  background-color: #ecb31d;
+}
+
+.nav_toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav_toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: #e8c29e;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0;
+    gap: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navContent{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem 0;
+  }
+
+  .navbar.fake{
+    display: flex;
+  }
+
+  .nav_toggle {
+    display: flex;
+  }
+
+  .nav_links {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.5rem 1rem 0.5rem;
+  }
+
+  .navbar.open .nav_links {
+    display: flex;
+    background-color: #fcfbf7;
+    width: 100%;
+  }
+
+  .navbar.open .nav_toggle span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .navbar.open .nav_toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar.open .nav_toggle span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+}

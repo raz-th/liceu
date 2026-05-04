@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,7 +20,35 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+
+      <body>
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <defs>
+            <filter id="watercolor-filter" x="-25%" y="-25%" width="150%" height="150%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.035 0.025"
+                numOctaves="5" seed="3" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise"
+                scale="18" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+              <feGaussianBlur in="displaced" stdDeviation="5" result="blurred" />
+              <feComposite in="blurred" in2="displaced" operator="in" />
+            </filter>
+          </defs>
+        </svg>
+        <svg width="0" height="0" style={{ position: "absolute", overflow: "hidden" }}>
+          <defs>
+            <filter id="navy-wc-filter" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022"
+                numOctaves="6" seed="5" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise"
+                scale="40" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+              <feGaussianBlur in="displaced" stdDeviation="14" />
+            </filter>
+          </defs>
+        </svg>
+
+
+        {children}
+      </body>
     </html>
   );
 }

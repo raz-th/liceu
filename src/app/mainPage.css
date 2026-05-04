@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rochester&family=Inter:wght@300;400&display=swap');
+
+.App {
+  position: relative;
+  background-color: #fcfbf7;
+  overflow: hidden;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 15% 65%, #f2ebd9 0%, transparent 75%),
+    radial-gradient(ellipse 75% 90% at 55% 35%, #faf9f2 0%, transparent 70%),
+    radial-gradient(ellipse 55% 75% at 90% 75%, #efe9d5 0%, transparent 75%),
+    radial-gradient(ellipse 45% 65% at 25% 95%, #eee3cc 0%, transparent 70%),
+    radial-gradient(ellipse 40% 55% at 75% 15%, #f8f4e8 0%, transparent 65%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.App::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 250px 250px;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.App>* {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 10%;
+  ;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero_content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 5;
+  position: relative;
+}
+
+.hero_blob {
+  position: absolute;
+  width: 28vw;
+  height: 22vw;
+  top: 8%;
+  left: 20%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 43% 57% 38% 62% / 55% 42% 58% 45%;
+
+  background: radial-gradient(ellipse 70% 60% at 45% 50%,
+      #d4bf96 0%,
+      #e8d9b8 45%,
+      #f0e9d2 75%,
+      transparent 100%);
+
+  filter: url(#watercolor-filter);
+  opacity: 0.45;
+}
+
+.hero_content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero_content h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #666;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero_content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 75px;
+  line-height: 1;
+  color: #0d2137;
+  margin-bottom: 30px;
+}
+
+.hero_content h1 .first {
+  text-transform: uppercase;
+  display: block;
+  letter-spacing: -1px;
+}
+
+.hero_content h1 .last {
+  font-family: 'Rochester', cursive;
+  text-transform: none;
+  font-size: 90px;
+  color: #1a3a5a;
+  font-weight: 400;
+  display: block;
+}
+
+.hero_content .citat {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+  max-width: 420px;
+}
+
+.hero .njimg {
+  position: absolute;
+  left: 60%;
+  bottom: 40%;
+  transform: translate(-100%, 100%);
+  /* height: 100%; */
+  width: 30%;
+  object-fit: cover;
+  /* object-position:left; */
+  z-index: 1;
+}
+
+.hero .coltarimg {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  /* height: 100%; */
+  width: 30%;
+  object-fit: cover;
+  /* object-position:left; */
+  z-index: 1;
+  opacity: 0.25;
+}
+
+.hero .coltarimg2 {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  transform: rotateZ(0deg) rotateX(0deg) rotateY(180deg);
+  /* height: 100%; */
+  width: 30%;
+  object-fit: cover;
+  /* object-position:left; */
+  z-index: 1;
+  opacity: .4;
+}
+
+.hero .heroimg:not(.fake) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 60%;
+  object-fit: cover;
+  object-position: left;
+  z-index: 1;
+}
+
+.poezie_perspective {
+  perspective: 1000px;
+  position: absolute;
+  left: 17%;
+  bottom: 8%;
+  color: rgba(40, 50, 70, 0.40);
+  /* color: red; */
+  font-family: 'Rochester', cursive;
+  font-size: 24px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.poezie_perspective p {
+  /* 
+    rotateX(50deg) -> culcă textul pe spate
+    rotateY(30deg) -> rotește textul spre dreapta (partea din stânga vine spre tine, partea din dreapta se depărtează)
+    rotateZ(-10deg) -> îi dă panta ușor ascendentă 
+    skewX(-15deg) -> apleacă literele în sine spre dreapta, accentuând efectul
+  */
+  transform: rotateX(70deg) rotateY(0deg) rotateZ(25deg) skewX(-15deg);
+  transform-origin: bottom left;
+  margin: 0;
+}
+
+.hero .heroimg.fake {
+  display: none;
+}
+
+.continuare {
+  position: relative;
+  overflow: hidden;
+  background-color: #0d1f35;
+  /* fallback solid */
+  min-height: 400px;
+}
+
+/* Fundalul watercolor generat cu pseudo-elements + SVG filter */
+.continuare::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 80% at 15% 60%, #162b47 0%, transparent 70%),
+    radial-gradient(ellipse 70% 90% at 55% 30%, #0a1828 0%, transparent 65%),
+    radial-gradient(ellipse 50% 70% at 88% 70%, #1a2f4a 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 30% 90%, #1e3a58 0%, transparent 65%),
+    radial-gradient(ellipse 35% 50% at 70% 10%, #243f60 0%, transparent 60%);
+  filter: url(#navy-wc-filter);
+  z-index: 0;
+}
+
+/* Granulatie subtila */
+.continuare::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.continuare>* {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+    align-items: normal;
+  }
+
+  .hero_content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    padding-top: 20px;
+    /* justify-content: center; */
+    /* background-color: red; */
+  }
+
+  .hero_content h1 {
+    font-size: 42px;
+  }
+
+  .hero_content h1 .last {
+    font-size: 50px;
+  }
+
+  .hero_content h2 {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .hero_content .citat {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* .hero .heroimg,
+  .hero .njimg,
+  .hero .coltarimg,
+  .hero .coltarimg2 {
+    display: none;
+  } */
+
+  .hero .heroimg:not(.fake) {
+    position: absolute;
+    height: 50vh;
+    width: 90vw;
+    object-fit: cover;
+    transform: translateY(40vh);
+    /* right: 10%; */
+  }
+
+  .hero .njimg {
+    display: none;
+  }
+
+  .hero_blob {
+    width: 60vw;
+    height: 50vw;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.3;
+  }
+
+  /* Scoatem textul 3D (devine ilizibil) */
+  .poezie_perspective {
+    display: none;
+  }
+}
