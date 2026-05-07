@@ -19,7 +19,7 @@ export const SeparatorSvg = () => {
     return (
         <svg
             viewBox="0 0 180 1201"
-            fill="#e6c69d"
+            fill="transparent"
             shapeRendering="geometricPrecision"
             textRendering="geometricPrecision"
             style={{ width: '100%', height: 'auto', display: 'block' }}

@@ -115,6 +115,7 @@ export default function ClientPage() {
                 </div>
                 <div className="cont2">
                     <div className="section">
+                        
                         <EminescuTimeline />
                         {/* <img src="/assets/ceasauriu.png"/> */}
                     </div>

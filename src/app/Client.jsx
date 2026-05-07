@@ -64,7 +64,7 @@ export default function ClientPage() {
             <div className="hero">
                 <div className="hero_blob"/>
                 {/* <div className="hero_blob" style={{left: 10, bottom: '-5rem', top: 'unset'}}/> */}
-                <div className="hero_content" ref={textRef}>
+                <div className="hero_content_liceu" ref={textRef}>
                     <h2>Mai mult decât o școală,</h2>
                     <h1>
                         <span className="first">O traditie</span>
