@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
+html {
+  min-height: 100%;
+  background: radial-gradient(ellipse at 50% 0%, #081428 0%, #081428 30%, #081428 60%, #040c18 100%);
+}
+
 body {
   min-height: 100%;
   display: flex;
@@ -9,7 +14,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(ellipse at 50% 0%, #081428 0%, #081428 30%, #081428 60%, #040c18 100%);
+  background: transparent; /* scoate gradientul de aici */
 }
 
 .canvas {
@@ -51,14 +56,14 @@ body {
 
 .hero_content h1 .first {
   font-family: "Great Vibes", cursive;
-  font-size: 7rem;
+  font-size: clamp(3rem, 10vw, 7rem);
   color: #e8c29e;
   margin-bottom: -1rem;
 }
 
 .hero_content h1 .last {
   font-family: "Playfair Display", serif;
-  font-size: 10rem;
+  font-size: clamp(5rem, 10vw, 9rem);
   font-weight: 900;
   letter-spacing: 0.2rem;
   color: #f5e6c8;
@@ -85,7 +90,8 @@ body {
 }
 
 .hero img {
-  height: 100vh;
+  /* height: 100vh; */
+  width: 50vw;
   object-fit: contain;
   z-index: 20;
   will-change: transform;
@@ -138,6 +144,7 @@ body {
 .cont2 .section:first-child {
   /* background: radial-gradient(ellipse at 50% 0%, #081428 0%, #081428 30%, #081428 60%, #040c18 100%); */
   background: transparent;
+
   /* align-items: center; */
   justify-content: center;
 }
