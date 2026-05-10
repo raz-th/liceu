@@ -98,6 +98,10 @@ body {
   transition: transform 0.05s linear;
 }
 
+.hero img.fake{
+  display: none;
+}
+
 .svg {
   margin-top: -15rem;
   z-index: 10;
@@ -402,6 +406,9 @@ body {
     align-self: stretch;
 
   }
+.hero img.fake{
+  display: block;
+}
 
 
 }
