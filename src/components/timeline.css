@@ -1,19 +1,18 @@
 .timeline-wrapper {
   position: relative;
-  min-height: 100vh;
-  /* background: linear-gradient(160deg, #0e1a2b 0%, #091422 60%, #0b1520 100%); */
+  /* min-height: 100vh; */
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
   overflow: hidden;
+  width: 100%;
 }
 
 .timeline-container {
   position: relative;
   z-index: 1;
   padding: 56px 40px 56px 48px;
-  max-width: 480px;
   width: 100%;
 }
 
@@ -44,13 +43,10 @@
 
 .timeline-row {
   display: grid;
-  grid-template-columns: 28px 68px 1fr;
+  grid-template-columns: 20px 1fr;
   gap: 0 16px;
   align-items: start;
   min-height: 72px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .timeline-row.visible {
@@ -82,17 +78,63 @@
   margin-top: 6px;
 }
 
+.timeline-content {
+  min-width: 0;
+  padding-bottom: 32px;
+}
+
 .timeline-year {
-  font-size: 15px;
+  font-size: 30px;
   font-weight: 400;
   color: #c9a96e;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   padding-top: 2px;
+  margin-bottom: 6px;
+  opacity: 0.85;
 }
 
 .timeline-text {
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 20px;
+  line-height: 1.7;
   color: #b8a98a;
-  padding-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 40px 24px 40px 20px;
+  }
+
+  .timeline-title {
+    font-size: 20px;
+    letter-spacing: 0.12em;
+  }
+
+  .timeline-row {
+    grid-template-columns: 16px 1fr;
+    gap: 0 12px;
+    min-height: 56px;
+  }
+
+  .timeline-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .timeline-line {
+    min-height: 36px;
+  }
+
+  .timeline-content {
+    padding-bottom: 24px;
+  }
+
+  .timeline-year {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-text {
+    font-size: 14px;
+    line-height: 1.65;
+  }
 }

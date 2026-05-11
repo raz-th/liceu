@@ -1,13 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Birthstone&display=swap");
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --gold-pale: #f7f0dc;
+  --ink: #1c1a14;
+  --ink-mid: #3d3928;
+  --ink-soft: #7a745e;
+  --cream: #faf7f0;
+  --cream-mid: #f0ebd8;
+  --white: #ffffff;
+  --red-accent: #8b2e2e;
+}
 
 .App {
   position: relative;
   background-color: #fcfbf7;
   overflow: hidden;
+  --max-width: 1400px;
 }
 
 .App::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background:
@@ -21,7 +35,7 @@
 }
 
 .App::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
@@ -32,7 +46,7 @@
   pointer-events: none;
 }
 
-.App>* {
+.App > * {
   position: relative;
   z-index: 1;
 }
@@ -43,7 +57,6 @@
   justify-content: space-between;
   min-height: 100vh;
   padding: 0 10%;
-  ;
   overflow: hidden;
   position: relative;
 }
@@ -65,11 +78,13 @@
   pointer-events: none;
   border-radius: 43% 57% 38% 62% / 55% 42% 58% 45%;
 
-  background: radial-gradient(ellipse 70% 60% at 45% 50%,
-      #d4bf96 0%,
-      #e8d9b8 45%,
-      #f0e9d2 75%,
-      transparent 100%);
+  background: radial-gradient(
+    ellipse 70% 60% at 45% 50%,
+    #d4bf96 0%,
+    #e8d9b8 45%,
+    #f0e9d2 75%,
+    transparent 100%
+  );
 
   filter: url(#watercolor-filter);
   opacity: 0.45;
@@ -81,7 +96,7 @@
 }
 
 .hero_content_liceu h2 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -91,7 +106,7 @@
 }
 
 .hero_content_liceu h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 75px;
   line-height: 1;
   color: #0d2137;
@@ -114,7 +129,7 @@
 }
 
 .hero_content_liceu .citat {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 17px;
   line-height: 1.8;
   color: #444;
@@ -155,7 +170,7 @@
   object-fit: cover;
   /* object-position:left; */
   z-index: 1;
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .hero .heroimg:not(.fake) {
@@ -174,9 +189,9 @@
   position: absolute;
   left: 17%;
   bottom: 8%;
-  color: rgba(40, 50, 70, 0.40);
+  color: rgba(40, 50, 70, 0.4);
   /* color: red; */
-  font-family: 'Rochester', cursive;
+  font-family: "Rochester", cursive;
   font-size: 24px;
   white-space: nowrap;
   z-index: 1;
@@ -202,13 +217,24 @@
   position: relative;
   overflow: hidden;
   background-color: #0d1f35;
-  /* fallback solid */
   min-height: 400px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+}
+
+.continuare .continuareContent {
+  padding: 2rem 4rem;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* Fundalul watercolor generat cu pseudo-elements + SVG filter */
 .continuare::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background:
@@ -223,7 +249,7 @@
 
 /* Granulatie subtila */
 .continuare::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
@@ -234,10 +260,126 @@
   pointer-events: none;
 }
 
-.continuare>* {
+.continuare > * {
   position: relative;
   z-index: 1;
 }
+
+.chapter {
+  padding: 5rem 0 4rem;
+  position: relative;
+}
+
+.chapter + .chapter {
+  border-top: 1px solid var(--cream-mid);
+}
+
+.chapter-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.chapter-era {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+}
+
+.chapter-line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.25;
+}
+
+.chapter h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.chapter h2 em {
+  font-style: italic;
+  color: var(--ink-mid);
+}
+
+.chapter-intro {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  line-height: 1.7;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.25rem;
+  max-width: 70%;
+  margin-top: 1rem;
+}
+
+.continuareContent p {
+  font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.8;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.dropcap::first-letter {
+  float: left;
+  font-family: "Playfair Display", serif;
+  font-size: 4.2rem;
+  line-height: 0.82;
+  margin-right: 0.12em;
+  margin-top: 0.07em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1.4rem;
+}
+
+.pullquote {
+    margin: 3rem -2rem;
+    padding: 2rem 3rem;
+    background: var(--ink);
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.55;
+    text-align: center;
+    position: relative;
+  }
+
+  .pullquote::before {
+    content: '\201C';
+    font-size: 5rem;
+    line-height: 0;
+    position: absolute;
+    top: 2.5rem;
+    left: 1.5rem;
+    opacity: 0.2;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .pullquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(232,213,163,0.5);
+    font-style: normal;
+    font-family: 'Source Serif 4', serif;
+  }
 
 @media (max-width: 768px) {
   .hero {
@@ -305,5 +447,9 @@
   /* Scoatem textul 3D (devine ilizibil) */
   .poezie_perspective {
     display: none;
+  }
+
+  .continuare .continuareContent{
+    padding: 2rem;
   }
 }
