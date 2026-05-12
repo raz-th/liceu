@@ -1,4 +1,5 @@
 "use client";
+import { Reveal } from "./Reveal";
 import "./timeline.css";
 
 const events2 = [
@@ -24,26 +25,28 @@ const events2 = [
   },
 ];
 
-export default function EminescuTimeline({events, title}) {
+export default function EminescuTimeline({ events, title }) {
   return (
     <div className="timeline-wrapper">
       <div className="timeline-container">
         <div className="timeline-title-block">
           {title && (<><h1 className="timeline-title">Scurtă istorie a liceului</h1><div className="timeline-underline" /></>)}
-          
+
         </div>
         <div className="timeline">
           {events.map((ev, i) => (
-            <div key={i} className="timeline-row visible">
-              <div className="timeline-dot-col">
-                <div className="timeline-dot" />
-                {i < events.length - 1 && <div className="timeline-line" />}
+            <Reveal key={i}>
+              <div  className="timeline-row visible">
+                <div className="timeline-dot-col">
+                  <div className="timeline-dot" />
+                  {i < events.length - 1 && <div className="timeline-line" />}
+                </div>
+                <div className="timeline-content">
+                  <div className="timeline-year">{ev.year}</div>
+                  <div className="timeline-text">{ev.text}</div>
+                </div>
               </div>
-              <div className="timeline-content">
-                <div className="timeline-year">{ev.year}</div>
-                <div className="timeline-text">{ev.text}</div>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

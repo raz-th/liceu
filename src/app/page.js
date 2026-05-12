@@ -1,3 +1,4 @@
+import Background from "@/components/background";
 import ClientPage from "./Client";
 import Navbar, { FakeNavbar } from "@/components/NavBar";
 
@@ -5,8 +6,9 @@ import Navbar, { FakeNavbar } from "@/components/NavBar";
 export default function Home() {
   return (
     <>
-      <FakeNavbar />
+
       <Navbar />
+      <Background/>
       <ClientPage />
     </>
   );

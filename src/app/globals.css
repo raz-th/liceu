@@ -1,6 +1,15 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --gold-pale: #f7f0dc;
+  --ink: #1c1a14;
+  --ink-mid: #3d3928;
+  --ink-soft: #7a745e;
+  --cream: #faf7f0;
+  --cream-mid: #f0ebd8;
+  --white: #ffffff;
+  --red-accent: #8b2e2e;
+  --max-width: 1400px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,7 +27,10 @@ body {
 
 }
 
-
+html {
+  min-height: 100%;
+  background: radial-gradient(ellipse at 50% 0%, #081428 0%, #081428 30%, #081428 60%, #040c18 100%);
+}
 
 body {
   min-height: 100%;
@@ -28,7 +40,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fcfbf7
+  background: transparent;
+  /* scoate gradientul de aici */
 }
 
 .canvas {
@@ -38,6 +51,7 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: -100;
+  /* z-index: 9999; */
 }
 
 
@@ -61,6 +75,100 @@ a {
 .reveal-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.chapter {
+  padding: 5rem 0 4rem;
+  position: relative;
+}
+
+.chapter+.chapter {
+  border-top: 1px solid var(--cream-mid);
+}
+
+.chapter-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.chapter-era {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: "Source Serif 4", serif;
+  font-weight: 400;
+}
+
+.chapter-line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.25;
+}
+
+.chapter h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.chapter h2 em {
+  font-style: italic;
+  color: var(--ink-mid);
+}
+
+.chapter-intro {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  line-height: 1.7;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.25rem;
+  max-width: 70%;
+  margin-top: 1rem;
+}
+
+.dropcap::first-letter {
+  float: left;
+  font-family: "Playfair Display", serif;
+  font-size: 4.2rem;
+  line-height: 0.82;
+  margin-right: 0.12em;
+  margin-top: 0.07em;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .chapter-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .chapter-label .chapter-line {
+    flex: unset;
+    width: 100%;
+    height: 1px;
+  }
+
+  .chapter-intro {
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .titluDeSectiune br {
+    display: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

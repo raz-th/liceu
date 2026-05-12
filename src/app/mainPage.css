@@ -15,12 +15,12 @@
 
 .App {
   position: relative;
-  background-color: #fcfbf7;
+
   overflow: hidden;
-  --max-width: 1400px;
+
 }
 
-.App::before {
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -34,7 +34,7 @@
   z-index: 0;
 }
 
-.App::after {
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -46,7 +46,7 @@
   pointer-events: none;
 }
 
-.App > * {
+.App>* {
   position: relative;
   z-index: 1;
 }
@@ -59,6 +59,8 @@
   padding: 0 10%;
   overflow: hidden;
   position: relative;
+  background-color: #fcfbf7;
+
 }
 
 .hero_content_liceu {
@@ -78,13 +80,11 @@
   pointer-events: none;
   border-radius: 43% 57% 38% 62% / 55% 42% 58% 45%;
 
-  background: radial-gradient(
-    ellipse 70% 60% at 45% 50%,
-    #d4bf96 0%,
-    #e8d9b8 45%,
-    #f0e9d2 75%,
-    transparent 100%
-  );
+  background: radial-gradient(ellipse 70% 60% at 45% 50%,
+      #d4bf96 0%,
+      #e8d9b8 45%,
+      #f0e9d2 75%,
+      transparent 100%);
 
   filter: url(#watercolor-filter);
   opacity: 0.45;
@@ -148,7 +148,7 @@
   z-index: 1;
 }
 
-.hero .coltarimg {
+.coltarimg {
   position: absolute;
   left: 0%;
   bottom: 0%;
@@ -160,7 +160,7 @@
   opacity: 0.25;
 }
 
-.hero .coltarimg2 {
+.coltarimg2 {
   position: absolute;
   right: 0%;
   bottom: 0%;
@@ -216,24 +216,17 @@
 .continuare {
   position: relative;
   overflow: hidden;
-  background-color: #0d1f35;
+  /* background-color: #0d1f35; */
   min-height: 400px;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.continuare .continuareContent {
-  padding: 2rem 4rem;
-  max-width: var(--max-width);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
 
-/* Fundalul watercolor generat cu pseudo-elements + SVG filter */
-.continuare::before {
+
+/* .continuare::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -245,7 +238,7 @@
     radial-gradient(ellipse 35% 50% at 70% 10%, #243f60 0%, transparent 60%);
   filter: url(#navy-wc-filter);
   z-index: 0;
-}
+} */
 
 /* Granulatie subtila */
 .continuare::after {
@@ -260,69 +253,12 @@
   pointer-events: none;
 }
 
-.continuare > * {
+.continuare>* {
   position: relative;
   z-index: 1;
 }
 
-.chapter {
-  padding: 5rem 0 4rem;
-  position: relative;
-}
 
-.chapter + .chapter {
-  border-top: 1px solid var(--cream-mid);
-}
-
-.chapter-label {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.chapter-era {
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-family: "Source Serif 4", serif;
-  font-weight: 400;
-}
-
-.chapter-line {
-  flex: 1;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.25;
-}
-
-.chapter h2 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--ink);
-  margin-bottom: 0.4rem;
-}
-
-.chapter h2 em {
-  font-style: italic;
-  color: var(--ink-mid);
-}
-
-.chapter-intro {
-  font-size: 1.15rem;
-  color: var(--ink-soft);
-  margin-bottom: 2.5rem;
-  font-style: italic;
-  line-height: 1.7;
-  border-left: 2px solid var(--gold);
-  padding-left: 1.25rem;
-  max-width: 70%;
-  margin-top: 1rem;
-}
 
 .continuareContent p {
   font-family: "Source Serif 4", Georgia, serif;
@@ -331,60 +267,97 @@
   font-weight: 300;
 }
 
-.dropcap::first-letter {
-  float: left;
-  font-family: "Playfair Display", serif;
-  font-size: 4.2rem;
-  line-height: 0.82;
-  margin-right: 0.12em;
-  margin-top: 0.07em;
-  color: var(--gold);
-  font-weight: 700;
-}
+
 
 p {
   margin-bottom: 1.4rem;
 }
 
 .pullquote {
-    margin: 3rem -2rem;
-    padding: 2rem 3rem;
-    background: var(--ink);
-    color: var(--gold-light);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-style: italic;
-    line-height: 1.55;
-    text-align: center;
-    position: relative;
-  }
+  padding: 2rem 3rem;
+  background: var(--ink);
+  color: var(--gold-light);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
+  position: relative;
+  margin: auto;
+}
 
-  .pullquote::before {
-    content: '\201C';
-    font-size: 5rem;
-    line-height: 0;
-    position: absolute;
-    top: 2.5rem;
-    left: 1.5rem;
-    opacity: 0.2;
-    font-family: 'Playfair Display', serif;
-  }
+.pullquote::before {
+  content: '\201C';
+  font-size: 5rem;
+  line-height: 0;
+  position: absolute;
+  top: 2.5rem;
+  left: 1.5rem;
+  opacity: 0.2;
+  font-family: 'Playfair Display', serif;
+}
 
-  .pullquote cite {
-    display: block;
-    margin-top: 1rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(232,213,163,0.5);
-    font-style: normal;
-    font-family: 'Source Serif 4', serif;
-  }
+.pullquote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(232, 213, 163, 0.5);
+  font-style: normal;
+  font-family: 'Source Serif 4', serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.continuare .continuareContent {
+  padding: 2rem 4rem;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  z-index: 10;
+}
+
+section.doi {
+  background-color: #fcfbf7;
+  color: #0d2137;
+  position: relative;
+}
+
+.oldPhotoContainer{
+  max-width: clamp(300px, 40vw, 500px);
+  /* border: 5px solid var(--gold); */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  align-items: center;
+  text-align: center;
+}
+.oldPhotoContainer img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  border-top: 4px solid var(--gold);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 5px 10px 1px #000000;
+  /* transform: translate(-30px, 30px) rotateZ(5deg); */
+}
 
 @media (max-width: 768px) {
   .hero {
     padding: 40px 20px;
     align-items: normal;
+    padding-top: 2rem;
   }
 
   .hero_content_liceu {
@@ -449,7 +422,9 @@ p {
     display: none;
   }
 
-  .continuare .continuareContent{
-    padding: 2rem;
+  .continuare section .continuareContent {
+    padding: 1.5rem;
   }
+
+
 }

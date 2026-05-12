@@ -18,11 +18,10 @@ export default function Footer() {
           <div className="footer-col">
             <p className="footer-col-title">Navigare</p>
             <ul className="footer-links">
-              <li><a href="#">Acasă</a></li>
-              <li><a href="#">Despre noi</a></li>
-              <li><a href="#">Mihai Eminescu</a></li>
-              <li><a href="#">Galerie</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="/">Acasă</a></li>
+              <li><a href="/biografie">Biografie</a></li>
+              <li><a href="/opere">Opere</a></li>
+              <li><a href="/galerie">Galerie</a></li>
             </ul>
           </div>
 

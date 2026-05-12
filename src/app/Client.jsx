@@ -1,8 +1,7 @@
-"use client";
-import React, { useRef } from "react";
 import "./mainPage.css";
 import { Reveal } from "@/components/Reveal";
 import EminescuTimeline from "@/components/Timeline";
+import { FakeNavbar } from "@/components/NavBar";
 
 const cards = [
   {
@@ -66,10 +65,10 @@ const events2 = [
 ];
 
 export default function ClientPage() {
-  const heroImgRef = useRef(null);
-  const fakeImgRef = useRef(null);
-  const svgRef = useRef(null);
-  const textRef = useRef(null);
+  // const heroImgRef = useRef(null);
+  // const fakeImgRef = useRef(null);
+  // const svgRef = useRef(null);
+  // const textRef = useRef(null);
 
   // useEffect(() => {
   //     const handleScroll = () => {
@@ -102,258 +101,347 @@ export default function ClientPage() {
 
   return (
     <div className="App">
-      <div className="hero">
-        <div className="hero_blob" />
-        {/* <div className="hero_blob" style={{left: 10, bottom: '-5rem', top: 'unset'}}/> */}
-        <div className="hero_content_liceu" ref={textRef}>
-          <Reveal>
-            <h2>Mai mult decât o școală,</h2>
-          </Reveal>
-          <h1>
-            <Reveal delay={100}>
-              <span className="first">O traditie</span>
+      <div style={{ backgroundColor: "#fcfbf7" }}>
+        <FakeNavbar />
+        <div className="hero">
+          <div className="hero_blob" />
+          {/* <div className="hero_blob" style={{left: 10, bottom: '-5rem', top: 'unset'}}/> */}
+          <div className="hero_content_liceu">
+            <Reveal>
+              <h2>Mai mult decât o școală,</h2>
             </Reveal>
+            <h1>
+              <Reveal delay={100}>
+                <span className="first">O traditie</span>
+              </Reveal>
 
-            <Reveal delay={200}>
-              <span className="last">de excelență</span>
+              <Reveal delay={200}>
+                <span className="last">de excelență</span>
+              </Reveal>
+            </h1>
+            <Reveal delay={300}>
+              <p className="citat">
+                Liceul „Mihai Eminescu" este locul unde educația se împletește cu
+                valorile, iar fiecare elev isi descopera drumul.
+              </p>
             </Reveal>
-          </h1>
-          <Reveal delay={300}>
-            <p className="citat">
-              Liceul „Mihai Eminescu" este locul unde educația se împletește cu
-              valorile, iar fiecare elev isi descopera drumul.
+          </div>
+
+          <img
+            className="heroimg"
+            // ref={heroImgRef}
+            src="/assets/heroimglic.png"
+            style={{ willChange: "transform" }}
+          />
+          {/* <img ref={fakeImgRef} className="heroimg fake" style={{ opacity: 0, willChange: "transform" }} src="/assets/heroimg.png" /> */}
+          <img className="njimg" src="/assets/nj.png" />
+          <img className="coltarimg" src="/assets/coltar.png" />
+          <img className="coltarimg2" src="/assets/coltar.png" />
+          <div className="poezie_perspective">
+            <p>
+              Iar te-ai cufundat în stele
+              <br />
+              Și în nori și-n ceruri nalte?
+              <br />
+              De nu m-ai uita încalte,
+              <br />
+              Sufletul vieții mele.
+              <br />
+              <br />
+              În zadar râuri în soare
+              <br />
+              Grămădești-n a ta gândire
+              <br />
+              Și câmpiile asire
+              <br />
+              Și întunecata mare;
+              <br />
+              <br />
+              Piramidele-nvechite
+              <br />
+              Urcă-n cer vârful lor mare -<br />
+              Nu căta în depărtare
+              <br />
+              Fericirea ta, iubite!
+              <br />
+              <br />
+              Astfel zise mititica,
+              <br />
+              Dulce netezindu-mi părul.
+              <br />
+              Ah! ea spuse adevărul;
+              <br />
+              Eu am râs, n-am zis nimica.
+              <br />
             </p>
-          </Reveal>
-        </div>
-
-        <img
-          className="heroimg"
-          ref={heroImgRef}
-          src="/assets/heroimglic.png"
-          style={{ willChange: "transform" }}
-        />
-        {/* <img ref={fakeImgRef} className="heroimg fake" style={{ opacity: 0, willChange: "transform" }} src="/assets/heroimg.png" /> */}
-        <img className="njimg" src="/assets/nj.png" />
-        <img className="coltarimg" src="/assets/coltar.png" />
-        <img className="coltarimg2" src="/assets/coltar.png" />
-        <div className="poezie_perspective">
-          <p>
-            Iar te-ai cufundat în stele
-            <br />
-            Și în nori și-n ceruri nalte?
-            <br />
-            De nu m-ai uita încalte,
-            <br />
-            Sufletul vieții mele.
-            <br />
-            <br />
-            În zadar râuri în soare
-            <br />
-            Grămădești-n a ta gândire
-            <br />
-            Și câmpiile asire
-            <br />
-            Și întunecata mare;
-            <br />
-            <br />
-            Piramidele-nvechite
-            <br />
-            Urcă-n cer vârful lor mare -<br />
-            Nu căta în depărtare
-            <br />
-            Fericirea ta, iubite!
-            <br />
-            <br />
-            Astfel zise mititica,
-            <br />
-            Dulce netezindu-mi părul.
-            <br />
-            Ah! ea spuse adevărul;
-            <br />
-            Eu am râs, n-am zis nimica.
-            <br />
-          </p>
+          </div>
         </div>
       </div>
 
       <div className="continuare">
-        <div className="continuareContent">
-          {/* <EminescuTimeline/> */}
-          <Reveal>
-            <div className="chapter-label">
-              <span className="chapter-era">Capitolul I — Trecut</span>
 
-              <div className="chapter-line"></div>
-            </div>
-          </Reveal>
-          <h1>
-            Un liceu de cartier
-            <br /> <em>cu ambiții de capital</em>
-          </h1>
+        {/* <EminescuTimeline/> */}
+        <section>
+          <div className="continuareContent">
+            <Reveal>
+              <div className="chapter-label">
+                <span className="chapter-era">Capitolul I — Trecut</span>
+                <div className="chapter-line"></div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <h1 className="titluDeSectiune">
+                Un liceu care încearcă
+                <br /> <em>să transforme ambiția în tradiție</em>
+              </h1>
+            </Reveal>
 
-          <p className="chapter-intro">
-            1 septembrie 1926. Floreasca, un cartier periferic al Bucureștiului
-            interbelic. Primul sunet al clopotului — și istoria începe.
-          </p>
+            <Reveal>
+              <p className="chapter-intro">
+                1 septembrie 1926. Floreasca, un cartier de la marginea Bucureștiului
+                interbelic. Primul sunet al clopotului și istoria începe.
+              </p>
+            </Reveal>
 
-          <p className="dropcap">
-            Era o zi de început de septembrie, caldă și prafuită, când 160 de
-            elevi au urcat pentru prima oară scările unui liceu nou — găzduit,
-            provizoriu, în localul școlii primare nr. 31 din Floreasca. Nu era
-            nicio clădire grandioasă, nicio fanfară. Era o idee: că și copiii
-            din cartierele muncitorești ale Capitalei merită o educație
-            adevărată.
-          </p>
+            <Reveal>
+              <p className="dropcap">
+                Era o zi de început de septembrie, caldă și prafuită, când 160 de
+                elevi au urcat pentru prima oară scările unui liceu nou, găzduit
+                provizoriu în localul școlii primare nr. 31 din Floreasca. Nu era
+                nicio clădire grandioasă, nicio fanfară. Era o idee: că și copiii
+                din cartierele muncitorești ale Capitalei merită o educație
+                adevărată.
+              </p>
+            </Reveal>
 
-          <p>
-            Ideea a fost pusă în practică de Victor Papacostea, primul director
-            al liceului, un intelectual cu viziune care a înțeles că o școală
-            valoroasă nu se construiește din cărămidă, ci din oameni. A reușit
-            să adune în jurul său un corp profesoral remarcabil — o echipă care
-            ar fi făcut invidie oricărui liceu cu tradiție îndelungată din
-            centrul orașului.
-          </p>
-          <p>
-            La 28 noiembrie 1926, regele Ferdinand I semnează actul constitutiv
-            prin care liceului i se acordă oficial numele Mihai Eminescu — o
-            alegere profund simbolică. Ce alt nume ar fi putut purta o școală
-            menită să nască iubitori de limbă română, de cultură, de frumos?
-          </p>
-          <p>
-            Creșterea a fost fulminantă. Sub al doilea director, C.
-            Niculescu-Slavea (1927–1930), efectivul de elevi s-a dublat.
-            Comunitatea s-a mobilizat: liste de subscripție în cartier, taxe
-            suplimentare colectate cu răbdare — bani adunați leu cu leu pentru a
-            construi ceva durabil. Rezultatul: o clădire proprie pe Calea
-            Dorobanților, un sediu cu identitate.
-          </p>
-          <div
-            className="pullquote"
-            role="figure"
-            aria-label="Citat emblematic"
-          >
-            „Un liceu nu e o clădire. E o promisiune făcută generațiilor care nu
-            s-au născut încă."
-            <cite>— spirit al școlilor interbelice românești</cite>
+            <Reveal>
+              <p>
+                Ideea a fost pusă în practică de Victor Papacostea, primul director
+                al liceului, un intelectual cu viziune care a înțeles că o școală
+                valoroasă nu se construiește din cărămidă, ci din oameni. A reușit
+                să adune în jurul său un corp profesoral remarcabil, o echipă care
+                ar fi făcut invidie oricărui liceu cu tradiție din centrul orașului.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                La 28 noiembrie 1926, regele Ferdinand I a semnat actul constitutiv
+                prin care liceului i s-a acordat oficial numele Mihai Eminescu, o
+                alegere profund simbolică. Ce alt nume ar fi putut purta o școală
+                menită să nască iubitori de limbă română, de cultură și de frumos?
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                Creșterea a fost rapidă. Sub al doilea director, C.
+                Niculescu-Slavea (1927-1930), efectivul de elevi s-a dublat.
+                Comunitatea s-a mobilizat: liste de subscripție în cartier, taxe
+                suplimentare colectate cu răbdare, bani adunați leu cu leu pentru a
+                construi ceva durabil. Rezultatul a fost o clădire proprie pe Calea
+                Dorobanților, un sediu cu identitate.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <div
+                className="pullquote"
+                role="figure"
+                aria-label="Citat emblematic"
+              >
+                „Un liceu nu e o clădire. E o promisiune făcută generațiilor care nu
+                s-au născut încă."
+                <cite>spiritul școlilor interbelice românești</cite>
+              </div>
+            </Reveal>
+
+            <EminescuTimeline events={events1} title={null} />
+
+            <Reveal>
+              <p>
+                Provocările prezentului sunt reale: digitalizarea educației,
+                concurența cu liceele de top din centrul orașului, presiunea
+                examenelor și întrebarea pe care fiecare generație și-o pune: de
+                ce mai contează o instituție cu tradiție, când informația e la un
+                click distanță?
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                Răspunsul vine din ceea ce o școală oferă dincolo de cunoștințe: un
+                mod de a gândi, un ritm, o exigență interiorizată. Acestea nu se
+                găsesc pe YouTube. Se construiesc în timp, în sălile de clasă, în
+                discuțiile cu profesori care știu mai mult decât ești dispus să
+                asculți.
+              </p>
+            </Reveal>
+            <Reveal>
+              <div className="oldPhotoContainer">
+                <img src="/assets/liceu1998.jpg" />
+                <Reveal width="100%" delay={200}><p>Fațada liceului „Mihai Eminescu", 1998</p></Reveal>
+              </div>
+            </Reveal>
           </div>
-          <EminescuTimeline events={events1} title={null} />
-          <p>
-            Provocările prezentului sunt reale: digitalizarea educației,
-            concurența cu liceele de top din centrul orașului, presiunea
-            examenelor, și întrebarea pe care fiecare generație și-o pune — de
-            ce contează o instituție cu tradiție, când informația e la un click
-            distanță?
-          </p>
-          <p>
-            Răspunsul vine din ceea ce o școală oferă dincolo de cunoștințe: un
-            mod de a gândi, un ritm, o exigență interiorizată. Asta nu se
-            găsește pe YouTube. Asta se construiește în timp, în sălile de
-            clasă, în discuțiile cu profesori care știu mai mult decât te
-            interesează să afli.
-          </p>
-          <div className="chapter-label">
-            <span className="chapter-era">Capitolul II — Prezent</span>
+        </section>
 
-            <div className="chapter-line"></div>
-          </div>
-          <h1>
-            Aproape o sută de ani —
-            <br /> <em>și liceul nu s-a obosit</em>
-          </h1>
+        <section className="doi">
+          <img className="coltarimg" src="/assets/coltar.png" />
+          <img className="coltarimg2" src="/assets/coltar.png" />
+          <div className="continuareContent">
+            <Reveal>
+              <div className="chapter-label">
+                <span className="chapter-era">Capitolul II — Prezent</span>
+                <div className="chapter-line"></div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <h1 className="titluDeSectiune">
+                Aproape o sută de ani
+                <br /> <em>și liceul nu și-a pierdut suflul</em>
+              </h1>
+            </Reveal>
 
-          <p className="chapter-intro">
-            Strada George Georgescu nr. 2, Sector 4. Același spirit, alte
-            generații, alte provocări — dar aceeași promisiune.
-          </p>
-          <p className="dropcap">
-            Astăzi, Colegiul Național „Mihai Eminescu" este o instituție cu
-            aproximativ 1.400 de elevi, situată în Sectorul 4 al Capitalei. O
-            școală de ciclu complet — primar, gimnazial, liceal — care oferă
-            unui adolescent posibilitatea de a-și face întreg parcursul formativ
-            într-un singur loc, înconjurat de aceeași comunitate, de aceeași
-            cultură instituțională.
-          </p>
-          <p>
-            În 2000, după decenii de performanță acumulată, Ministerul Educației
-            a acordat titlul de Colegiu Național — o distincție care nu se dă
-            ușor și nu se păstrează fără efort. Astăzi, colegiul continuă să fie
-            unul dintre liceele reprezentative ale Capitalei, cu un corp
-            profesoral experimentat și rezultate solide la examene naționale și
-            olimpiade.
-          </p>
-          <p>
-            Ce înseamnă să fii „eminescian" în 2025? Înseamnă să înveți în
-            curtea unei instituții care a format generații întregi înaintea ta.
-            Înseamnă să simți, în fiecare zi, greutatea unui nume pe care
-            trebuie să îl porți cu demnitate. E o presiune. Dar e și un
-            privilegiu.
-          </p>
-          <div
-            className="pullquote"
-            role="figure"
-            aria-label="Citat emblematic"
-          >
-            „Liceul nostru are menirea de a desăvârși personalitatea
-            adolescentului — un parcurs continuu, sincronizat cu ritmul
-            accelerat al schimbărilor din societate."
-            <cite>— din prezentarea oficială a colegiului</cite>
-          </div>
-          <p>
-            Provocările prezentului sunt reale: digitalizarea educației,
-            concurența cu liceele de top din centrul orașului, presiunea
-            examenelor, și întrebarea pe care fiecare generație și-o pune — de
-            ce contează o instituție cu tradiție, când informația e la un click
-            distanță?
-          </p>
-          <p>
-            Răspunsul vine din ceea ce o școală oferă dincolo de cunoștințe: un
-            mod de a gândi, un ritm, o exigență interiorizată. Asta nu se
-            găsește pe YouTube. Asta se construiește în timp, în sălile de
-            clasă, în discuțiile cu profesori care știu mai mult decât te
-            interesează să afli.
-          </p>
-          <div className="chapter-label">
-            <span className="chapter-era">Capitolul III — Viitor</span>
+            <Reveal>
+              <p className="chapter-intro">
+                Strada George Georgescu nr. 2, Sector 4. Același spirit, alte
+                generații, alte provocări, dar aceeași promisiune.
+              </p>
+            </Reveal>
 
-            <div className="chapter-line"></div>
+            <Reveal>
+              <p className="dropcap">
+                Astăzi, Colegiul National „Mihai Eminescu" este o instituție cu
+                aproximativ 1.400 de elevi, situată în Sectorul 4 al Capitalei. O
+                școală de ciclu complet, primar, gimnazial și liceal, care oferă
+                unui adolescent posibilitatea de a-și face întreg parcursul formativ
+                într-un singur loc, înconjurat de aceeași comunitate și aceeași
+                cultură instituțională.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                În anul 2000, după decenii de performanță acumulată, Ministerul
+                Educației a acordat titlul de Colegiu National, o distincție care
+                nu se obține ușor și nu se păstrează fără efort. Astăzi, colegiul
+                rămâne unul dintre liceele reprezentative ale Capitalei, cu un corp
+                profesoral experimentat și rezultate solide la examene naționale și
+                olimpiade.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                Ce înseamnă să fii „eminescian" în 2025? Înseamnă să înveți în
+                curtea unei instituții care a format generații întregi înaintea ta.
+                Înseamnă să simți, în fiecare zi, greutatea unui nume pe care
+                trebuie să îl porți cu demnitate. E o presiune, dar și un
+                privilegiu.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <div
+                className="pullquote"
+                role="figure"
+                aria-label="Citat emblematic"
+              >
+                „Liceul nostru are menirea de a desăvârși personalitatea
+                adolescentului, un parcurs continuu, sincronizat cu ritmul
+                accelerat al schimbărilor din societate."
+                <cite>din prezentarea oficială a colegiului</cite>
+              </div>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                Provocările prezentului sunt reale: digitalizarea educației,
+                concurența cu liceele de top din centrul orașului, presiunea
+                examenelor și întrebarea pe care fiecare generație și-o pune: de
+                ce mai contează o instituție cu tradiție, când informația e la un
+                click distanță?
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                Răspunsul vine din ceea ce o școală oferă dincolo de cunoștințe: un
+                mod de a gândi, un ritm, o exigență interiorizată. Acestea nu se
+                găsesc pe YouTube. Se construiesc în timp, în sălile de clasă, în
+                discuțiile cu profesori care știu mai mult decât ești dispus să
+                asculți.
+              </p>
+            </Reveal>
           </div>
-          <h1>
-            Centenarul se apropie.
-            <br /> <em>Ce urmează?</em>
-          </h1>
-          <p className="chapter-intro">
-            2026 va marca o sută de ani de la primul clopoțel. Dar un centenar
-            nu e un punct final — e un punct de plecare.
-          </p>
-          <p className="dropcap">
-            Există ceva profund simbolic în a împlini o sută de ani purtând
-            numele lui Mihai Eminescu — poetul care a definit limba română
-            modernă, care a scris despre timp, despre memorie, despre lucrurile
-            care dăinuie dincolo de oameni. Un colegiu care atinge centenarul nu
-            celebrează trecutul. Celebrează capacitatea de a continua.
-          </p>
-          <p>
-            Viitorul Colegiului Național „Mihai Eminescu" stă în mâinile celor
-            care îl vor trăi — elevii de astăzi, profesorii de mâine, o
-            comunitate care înțelege că o instituție de educație este poate cel
-            mai important proiect pe care o societate îl poate finanța cu timp,
-            atenție și resurse.
-          </p>
-          <p>
-            Educația se schimbă. Inteligența artificială reconfigurează ce
-            înseamnă să știi ceva. Economia cere competențe noi în fiecare
-            deceniu. Dar ceea ce rămâne constant — curiozitatea, rigoarea,
-            capacitatea de a gândi critic și de a argumenta frumos — sunt exact
-            lucrurile pe care o școală ca aceasta le-a predat dintotdeauna.
-          </p>
-          <EminescuTimeline events={events2} title={null} />
-          <p>
-            Într-o lume în care totul se mișcă rapid și nimic nu pare să dureze,
-            o instituție care împlinește un secol trimite un mesaj simplu și
-            puternic: unele lucruri merită să reziste.
-          </p>
-        </div>
+        </section>
+
+        <section>
+          <div className="continuareContent">
+            <Reveal>
+              <div className="chapter-label">
+                <span className="chapter-era">Capitolul III — Viitor</span>
+                <div className="chapter-line"></div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <h1 className="titluDeSectiune">
+                Centenarul se apropie.
+                <br /> <em>Ce urmează?</em>
+              </h1>
+            </Reveal>
+
+            <Reveal>
+              <p className="chapter-intro">
+                Anul 2026 va marca o sută de ani de la primul clopoțel. Dar un
+                centenar nu este un punct final, ci un nou punct de plecare.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p className="dropcap">
+                Există ceva profund simbolic în a împlini o sută de ani purtând
+                numele lui Mihai Eminescu, poetul care a definit limba română
+                modernă, care a scris despre timp, despre memorie și despre lucrurile
+                care dăinuie dincolo de oameni. Un colegiu care atinge centenarul nu
+                celebrează doar trecutul, ci celebrează și capacitatea de a
+                continua.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                Viitorul Colegiului National „Mihai Eminescu" stă în mâinile celor
+                care îl vor trăi: elevii de astăzi, profesorii de mâine și o
+                comunitate care înțelege că o instituție de educație este poate cel
+                mai important proiect pe care o societate îl poate susține cu timp,
+                atenție și resurse.
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <p>
+                Educația se schimbă. Inteligența artificială redefinește ce
+                înseamnă să știi ceva. Economia cere competențe noi în fiecare
+                deceniu. Dar ceea ce rămâne constant, curiozitatea, rigoarea și
+                capacitatea de a gândi critic, sunt exact lucrurile pe care o
+                școală ca aceasta le-a predat dintotdeauna.
+              </p>
+            </Reveal>
+
+            <EminescuTimeline events={events2} title={null} />
+
+            <Reveal>
+              <p>
+                Într-o lume în care totul se mișcă rapid și nimic nu pare să dureze,
+                o instituție care împlinește un secol transmite un mesaj simplu și
+                puternic: unele lucruri merită să reziste.
+              </p>
+            </Reveal>
+          </div>
+        </section>
       </div>
-    </div>
+    </div >
   );
 }
