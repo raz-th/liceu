@@ -843,9 +843,6 @@ const poezii = [
   },
 ];
 
-const jsonDir = Path2D.join(process.cwd(), 'app/api/opere/[id]')
-const fileContents = await fs.readFile(jsonDirectory + '/sarmanul.json', 'utf8');
-const data = JSON.parse(fileContents)
 
 
 export async function GET(request, { params }) {

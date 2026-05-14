@@ -5,9 +5,8 @@ import './opere.css'
 import { useTheme } from '@/context/NavContext';
 import { BsFeather, BsStars } from 'react-icons/bs';
 import { PiBookOpenTextLight } from 'react-icons/pi';
-import { LuDrama } from 'react-icons/lu';
 import { MdArrowRightAlt } from 'react-icons/md';
-import { FaBook, FaClock, FaHeart, FaHome, FaMoon, FaStar } from 'react-icons/fa';
+import { FaBook, FaClock, FaHeart } from 'react-icons/fa';
 import Link from 'next/link';
 import BackSvg from '@/components/svg';
 import { Reveal } from '@/components/Reveal';
