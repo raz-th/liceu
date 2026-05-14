@@ -4,12 +4,13 @@ import "./navbar.css";
 import { FaFeatherAlt } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "@/context/NavContext";
 
 
 export function FakeNavbar() {
 
   return (
-    <nav className="navbar fake">
+    <nav className="navbar fake" style={{position: 'relative'}}>
       <div className="logo">
         <img src="/assets/logo.png" style={{ width: 20 }} />
       </div>
@@ -33,10 +34,10 @@ export function FakeNavbar() {
   );
 }
 
-export default function Navbar({light=false}) {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   const nav = usePathname();
-  
+  const { theme } = useTheme();
   // const [scrollPosition, setScrollPosition] = useState(0);
 
   // const handleScroll = () => {
@@ -57,7 +58,7 @@ export default function Navbar({light=false}) {
   return (
     <nav className={`navbar ${open ? "open" : ""}`}>
       <div className="navContent">
-        <div className="logo" style={light ? {color: "#fff"} : {}}>
+        <div className="logo" style={theme ? {color: "#fff"} : {}}>
           <img src="/assets/logo.png" style={{ width: 40, height: 'fit-content' }} />
           <p>Colegiul National<br /> „ Mihai Eminescu"</p>
         </div>
@@ -69,11 +70,11 @@ export default function Navbar({light=false}) {
         </button>
       </div>
 
-      <ul className={`nav_links ${light ? "light" : ""}`} >
-        <li className={nav == "/"?"selected":""} ><Link href={"/"}>Acasă</Link></li>
-        <li className={nav == "/biografie"?"selected":""} ><Link href={"/biografie"}>Biografie</Link></li>
-        <li className={nav == "/opere"?"selected":""} >Opere</li>
-        <li className={nav== "/galerie"?"selected":""} >Galerie</li>
+      <ul className={`nav_links ${theme ? "light" : ""}`} >
+        <li className={nav == "/"?"selected":""} onClick={()=>setOpen(false)}><Link href={"/"}>Acasă</Link></li>
+        <li className={nav == "/biografie"?"selected":""} onClick={()=>setOpen(false)}><Link href={"/biografie"}>Biografie</Link></li>
+        <li className={nav.startsWith("/oper")?"selected":""} onClick={()=>setOpen(false)}><Link href={"/opere"}>Opere</Link></li>
+        <li className={nav== "/galerie"?"selected":""} onClick={()=>setOpen(false)}><Link href={"/galerie"}>Galerie</Link></li>
       </ul>
       {/* <div style={{display: 'flex', flex: 1, justifyContent: 'right'}}>
         <FaFeatherAlt size={30} color="#e6c69d"/>

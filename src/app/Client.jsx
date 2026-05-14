@@ -1,7 +1,10 @@
+'use client';
 import "./mainPage.css";
 import { Reveal } from "@/components/Reveal";
 import EminescuTimeline from "@/components/Timeline";
 import { FakeNavbar } from "@/components/NavBar";
+import { useTheme } from "@/context/NavContext";
+import { useEffect, useState } from "react";
 
 const cards = [
   {
@@ -65,6 +68,14 @@ const events2 = [
 ];
 
 export default function ClientPage() {
+  const { isWhiteMode } = useTheme();
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    setWidth(window.innerWidth)
+  }, [])
+
+  useEffect(() => { isWhiteMode(false) }, []);
   // const heroImgRef = useRef(null);
   // const fakeImgRef = useRef(null);
   // const svgRef = useRef(null);
@@ -130,7 +141,7 @@ export default function ClientPage() {
           <img
             className="heroimg"
             // ref={heroImgRef}
-            src="/assets/heroimglic.png"
+            src={width<700?"/assets/heroimglic_431.png":"/assets/heroimglic.png"}
             style={{ willChange: "transform" }}
           />
           {/* <img ref={fakeImgRef} className="heroimg fake" style={{ opacity: 0, willChange: "transform" }} src="/assets/heroimg.png" /> */}
@@ -280,7 +291,7 @@ export default function ClientPage() {
             <Reveal>
               <div className="oldPhotoContainer">
                 <img src="/assets/liceu1998.jpg" />
-                <Reveal width="100%" delay={200}><p>Fațada liceului „Mihai Eminescu", 1998</p></Reveal>
+                <p>Fațada liceului „Mihai Eminescu", 1998</p>
               </div>
             </Reveal>
           </div>

@@ -1,0 +1,447 @@
+.galeriePage {
+    min-height: 100vh;
+    padding-top: 9rem;
+    padding-bottom: 6rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.galeriePage.loaded {
+    opacity: 1;
+}
+
+/* ─── HEADER ─── */
+.galerie_header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 4rem 2.5rem;
+    border-bottom: 0.5px solid #c9b48a55;
+    margin-bottom: 2rem;
+}
+
+.galerie_header_text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.galerie_supertitlu {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0;
+}
+
+.galerie_titlu {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.galerie_titlu_line {
+    width: 3rem;
+    height: 1.5px;
+    background: var(--gold);
+    margin: 0.5rem 0;
+}
+
+.galerie_subtitlu {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #fff;
+    margin: 0;
+}
+
+.galerie_count {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.galerie_count_nr {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.galerie_count_label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* ─── FILTRE ─── */
+.galerie_filtre {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 4rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1.5px solid #c9b48a44;
+}
+
+.galerie_filtru_btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.4rem 0.7rem 0;
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid transparent;
+    margin-bottom: -1.5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a8060;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.galerie_filtru_btn:hover {
+    color: #2a1f0e;
+}
+
+.galerie_filtru_btn.activ {
+    color: #2a1f0e;
+    border-bottom-color: #2a1f0e;
+}
+
+.filtru_count {
+    background: #c9a06022;
+    color: #c9a060;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 20px;
+    border: 0.5px solid #c9a06044;
+    letter-spacing: 0;
+}
+
+.galerie_filtru_btn.activ .filtru_count {
+    background: #c9a06033;
+}
+
+/* ─── MASONRY GRID ─── */
+.galerie_masonry {
+    columns: 4;
+    column-gap: 0.9rem;
+    padding: 0 4rem;
+}
+
+.galerie_item {
+    break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 0.9rem;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+  -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.galerie_item_normal .galerie_img {
+    aspect-ratio: 4/3;
+}
+
+.galerie_item_tall .galerie_img {
+    aspect-ratio: 3/4;
+}
+
+.galerie_item_wide .galerie_img {
+    aspect-ratio: 16/9;
+}
+
+.galerie_img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    filter: sepia(15%) brightness(0.92);
+    background: #e6ddd0;
+}
+
+.galerie_item:hover .galerie_img {
+    transform: scale(1.04);
+    filter: sepia(5%) brightness(0.75);
+}
+
+/* Overlay */
+.galerie_item_overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 8, 2, 0.82) 0%, rgba(15, 8, 2, 0.2) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+}
+
+.galerie_item:hover .galerie_item_overlay {
+    opacity: 1;
+}
+
+.galerie_item_info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    transform: translateY(8px);
+    transition: transform 0.3s ease;
+}
+
+.galerie_item:hover .galerie_item_info {
+    transform: translateY(0);
+}
+
+.galerie_item_cat {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a060;
+}
+
+.galerie_item_titlu {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f0e8d5;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.galerie_item_an {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    color: #9a8060;
+    font-style: italic;
+}
+
+/* ─── LIGHTBOX ─── */
+.galerie_lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 5, 2, 0.94);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    animation: fadeIn 0.2s ease;
+    padding: 2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox_close {
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    background: none;
+    border: 0.5px solid #c9a06055;
+    color: #c9b48a;
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox_close:hover {
+    border-color: #c9a060;
+    color: #e8d5a3;
+}
+
+.lightbox_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 75vw;
+}
+
+.lightbox_img {
+    max-height: 72vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+}
+
+.lightbox_info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lightbox_cat {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a060;
+}
+
+.lightbox_titlu {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e8d5a3;
+    margin: 0;
+}
+
+.lightbox_an {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #7a6040;
+}
+
+.lightbox_nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.lightbox_nav_btn {
+    background: none;
+    border: 0.5px solid #c9a06055;
+    color: #c9b48a;
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.lightbox_nav_btn:hover {
+    border-color: #c9a060;
+    color: #e8d5a3;
+    background: #c9a06011;
+}
+
+.lightbox_pozitie {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.82rem;
+    color: #7a6040;
+    font-style: italic;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+    .galerie_masonry {
+        columns: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeriePage {
+        padding-top: 5rem;
+    }
+
+    .galerie_header {
+        padding: 0 1.5rem 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .galerie_titlu {
+        font-size: 2rem;
+    }
+
+    .galerie_count {
+        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .galerie_count_nr {
+        font-size: 1.8rem;
+    }
+
+    .galerie_filtre {
+        padding: 0 1.5rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .galerie_filtre::-webkit-scrollbar {
+        display: none;
+    }
+
+    .galerie_masonry {
+        columns: 2;
+        padding: 0 1.5rem;
+    }
+
+    .lightbox_content {
+        max-width: 95vw;
+    }
+
+    .lightbox_info {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .galerie_masonry {
+        columns: 1;
+    }
+}

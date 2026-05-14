@@ -11,30 +11,10 @@ export default function Footer() {
             <p className="footer-brand-name">Colegiul Național „Mihai Eminescu"</p>
             <p className="footer-brand-sub">București, fondat 1926</p>
             <p className="footer-brand-desc">
-              Un secol de educație, valori și tradiție — în inima capitalei.
+              Proiect realizat de echipa „EmiVerse”, având ca scop valorificarea istoriei și identității Colegiului Național „Mihai Eminescu” din București printr-o pagină web interactivă, care îmbină informații, imagini și materiale multimedia într-o prezentare modernă și autentică a comunității liceului.
+
             </p>
           </div>
-
-          <div className="footer-col">
-            <p className="footer-col-title">Navigare</p>
-            <ul className="footer-links">
-              <li><a href="/">Acasă</a></li>
-              <li><a href="/biografie">Biografie</a></li>
-              <li><a href="/opere">Opere</a></li>
-              <li><a href="/galerie">Galerie</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <p className="footer-col-title">Contact</p>
-            <ul className="footer-links">
-              <li>Str. George Georgescu nr. 2</li>
-              <li>Sector 4, București</li>
-              <li><a href="mailto:colegiul_eminescu@yahoo.com">colegiul_eminescu@yahoo.com</a></li>
-              <li><a href="tel:+40213304001">+40 213 304 001</a></li>
-            </ul>
-          </div>
-
         </div>
 
         <div className="footer-bottom">

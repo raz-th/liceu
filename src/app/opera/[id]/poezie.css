@@ -1,0 +1,272 @@
+.poeziePage {
+    min-height: 100vh;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    background: transparent;
+    width: 100vw;
+}
+
+/* ─── HERO / BREADCRUMB ─── */
+.poezie_hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem 1.5rem;
+    border-bottom: 0.5px solid #c9b48a44;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.poezie_back {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a6040;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.poezie_back:hover {
+    color: #c9a060;
+}
+
+.poezie_breadcrumb {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9a8060;
+}
+
+/* ─── LAYOUT ─── */
+.poezie_layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    padding: 0 4rem;
+    max-width: 1100px;
+}
+
+/* ─── SIDEBAR ─── */
+.poezie_sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 8rem;
+    height: fit-content;
+}
+
+.poezie_cover_wrap {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.poezie_cover {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    filter: sepia(35%) brightness(0.78);
+}
+
+.poezie_cover_overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 6, 2, 0.6) 0%, transparent 60%);
+}
+
+.poezie_meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.poezie_meta_row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid #c9b48a22;
+}
+
+.poezie_meta_row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.poezie_meta_label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.poezie_meta_value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.88rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.poezie_teme {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+}
+
+.poezie_tema_tag {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #8a6030;
+    background: #c9a06018;
+    border: 0.5px solid #c9a06044;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+/* ─── CONȚINUT PRINCIPAL ─── */
+.poezie_content {
+    padding-bottom: 4rem;
+}
+
+.poezie_titlu_wrap {
+    margin-bottom: 3.5rem;
+}
+
+.poezie_gen {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9a8060;
+    margin: 0 0 0.6rem;
+}
+
+.poezie_titlu {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+}
+
+.poezie_divider {
+    width: 3.5rem;
+    height: 1.5px;
+    background: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.poezie_autor_sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #9a8060;
+    margin: 0;
+}
+
+/* ─── POEZIA ─── */
+.poezie_text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.poezie_strofa {
+    margin-bottom: 2.2rem;
+}
+
+.poezie_vers {
+    font-family: 'EB Garamond', 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #fff;
+    margin: 0;
+    font-style: italic;
+}
+
+.poezie_vers.vers_final {
+    font-style: normal;
+    font-weight: 500;
+    color: #1a1008;
+}
+
+.poezie_continuare {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.4;
+}
+
+.poezie_continuare span {
+    font-size: 1.5rem;
+    color: #c9a060;
+    letter-spacing: 0.3em;
+}
+
+.poezie_continuare p {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #7a6040;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+    .poeziePage {
+        padding-top: 5rem;
+    }
+
+    .poezie_hero {
+        padding: 0 1.5rem 1.2rem;
+    }
+
+    .poezie_layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+
+    .poezie_sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 1.2rem;
+        align-items: start;
+    }
+
+    .poezie_cover_wrap {
+        grid-row: 1;
+    }
+
+    .poezie_meta {
+        grid-row: 1;
+    }
+
+    .poezie_titlu {
+        font-size: 2rem;
+    }
+
+    .poezie_vers {
+        font-size: 1rem;
+    }
+}
